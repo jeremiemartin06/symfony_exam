@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>detail projet</h1>
+   
+        <p>nom du projet: {{ project.name }} status: {{ project.status }}<p>
+
+        {% for task in tasks %}
+        <p>nom de la tache: {{ task.title }} description: {{ task.description }}</p>
+    {% endfor %}
+
+    <a href="{{ path('add_task', {'id': project.id}) }}">Ajouter tache</a>
+
+ 
+{% endblock %}
